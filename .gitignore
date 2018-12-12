@@ -17,6 +17,11 @@ target
 /InterestingDemoJava/gen
 /InterestingDemoJava/target
 
+/InterestingVUE/.idea
+/InterestingVUE/*.iml
+/InterestingVUE/out
+/InterestingVUE/gen
+/InterestingVUE/target
 
 
 
@@ -30,3 +35,8 @@ target
 /InterestingDemoJava/.classpath
 /InterestingDemoJava/.settings
 /InterestingDemoJava/target
+
+/InterestingVUE/.project
+/InterestingVUE/.classpath
+/InterestingVUE/.settings
+/InterestingVUE/target
