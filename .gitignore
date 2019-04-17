@@ -23,6 +23,12 @@ target
 /InterestingVUE/gen
 /InterestingVUE/target
 
+/InterestingRabbitMQ/.idea
+/InterestingRabbitMQ/*.iml
+/InterestingRabbitMQ/out
+/InterestingRabbitMQ/gen
+/InterestingRabbitMQ/target
+
 
 
 # Eclipse 工程需要忽略的文件
@@ -40,3 +46,8 @@ target
 /InterestingVUE/.classpath
 /InterestingVUE/.settings
 /InterestingVUE/target
+
+/InterestingRabbitMQ/.project
+/InterestingRabbitMQ/.classpath
+/InterestingRabbitMQ/.settings
+/InterestingRabbitMQ/target
