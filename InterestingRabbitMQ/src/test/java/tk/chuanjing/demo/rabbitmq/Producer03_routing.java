@@ -86,13 +86,13 @@ public class Producer03_routing {
                 //发送消息的时候指定routingKey
                 String message = "send email inform message to user";
                 channel.basicPublish(EXCHANGE_ROUTING_INFORM,ROUTINGKEY_EMAIL,null,message.getBytes());
-                System.out.println("send to mq "+message);
+                System.out.println("send to mq_consumer "+message);
             }
             for(int i=0;i<5;i++){
                 //发送消息的时候指定routingKey
                 String message = "send sms inform message to user";
                 channel.basicPublish(EXCHANGE_ROUTING_INFORM,ROUTINGKEY_SMS,null,message.getBytes());
-                System.out.println("send to mq "+message);
+                System.out.println("send to mq_consumer "+message);
             }*/
             for(int i=0;i<5;i++){
                 //发送消息的时候指定routingKey
