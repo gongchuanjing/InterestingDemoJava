@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+	<th:block th:include="include :: header('POS收益概览')" />
+</head>
+<body class="gray-bg">
+<div class="container-div" id="app">
+	<div class="row">
+
+		<!-- 正文区域 -->
+		<div class="col-sm-12 search-collapse">
+		<!--<section class="content">-->
+			<!-- 统计数值 -->
+			<div class="row" >
+				<div class="col-lg-3 col-xs-6">
+					<div class="thumbnail" style="background:#FFaaaa; color:#FFaaaa">
+						<!--<img src="..." alt="...">-->
+						<div class="caption">
+							<h2>{{profitSummary.posnumber}} 台</h2>
+							<p>销售POS台数</p>
+							<p><a href="#" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-xs-6">
+					<div class="thumbnail" style="background:#ed5565; color:#ed5565">
+						<!--<img src="..." alt="...">-->
+						<div class="caption">
+							<h2>{{profitSummary.posnumberProfit}} 元</h2>
+							<p>销售POS收益</p>
+							<p><a href="#" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-xs-6">
+					<div class="thumbnail" style="background:#f8ac59; color:#f8ac59">
+						<!--<img src="..." alt="...">-->
+						<div class="caption">
+							<h2>{{profitSummary.posconsumeNumber}} 笔</h2>
+							<p>POS刷卡笔数</p>
+							<p><a href="#" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-xs-6">
+					<div class="thumbnail" style="background:#bbe2d5; color:#bbe2d5">
+						<!--<img src="..." alt="...">-->
+						<div class="caption">
+							<h2>{{profitSummary.posconsumeNumberProfit}} 元</h2>
+							<p>POS刷卡单数收益</p>
+							<p><a href="#" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--</section>-->
+		</div>
+	</div>
+</div>
+<th:block th:include="include :: footer" />
+<!--
+<script src="/js/vuejs-2.5.16.js"></script>
+<script src="/js/axios-0.18.0.js"></script>
+-->
+<script th:inline="javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            profitSummary:{
+                userId:"",
+                posnumber:"",
+                posnumberProfit:"",
+                posconsumeNumber:"",
+                posconsumeNumberProfit:""
+            }
+        },
+        methods:{
+            getProfitSummary:function(userid){
+                //在当前方法中定义一个变量，表明是vue对象
+                var _this = this;
+                axios.get('/interview/pos/getProfitSummary',{params:{id:userid}})
+                    .then(function (response) {
+                        _this.profitSummary = response.data;//响应数据给profitSummary赋值
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        alert(error);
+                    })
+            }
+        },
+        created:function() {//当我们页面加载的时候触发请求
+            this.getProfitSummary(1);
+        }
+    });
+</script>
+</body>
+</html>
