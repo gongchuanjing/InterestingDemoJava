@@ -11,8 +11,7 @@
     <artifactId>InterestingVUE</artifactId>
     <packaging>war</packaging>
 
-    <name>InterestingVUE Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
+    <name>InterestingVUE</name>
     <url>http://www.example.com</url>
 
     <properties>
